@@ -1,0 +1,251 @@
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    /**  Reset para REMS -62.5% = 10px de 16px  **/
+}
+
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+}
+
+a,
+ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+
+/* ----------- navegacion ------------*/
+
+.nav-container {
+    background-color: #353535;
+}
+
+.logo {
+    padding: 2rem;
+    width: 50%;
+}
+
+.logo a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    color: white;
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .logo {
+        width: 40%;
+    }
+    .logo a {
+        font-size: 4rem;
+    }
+}
+
+nav a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    color: white;
+}
+
+nav {
+    display: flex;
+    overflow: hidden;
+}
+
+.nav {
+    display: none;
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) and (max-width: 959px) {
+    .nav {
+        display: block;
+    }
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav a {
+        font-size: 2.2rem;
+        padding: 2rem;
+    }
+}
+
+@media (min-width: 960px) and (max-width: 1199px) {
+    .nav {
+        display: block;
+    }
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+    .nav a {
+        font-size: 2.2rem;
+        padding: 2rem;
+    }
+}
+
+
+/*  ----- mobile menu ------*/
+
+@media (min-width: 768px) {
+    .menu {
+        display: none;
+    }
+}
+
+#btn-menu {
+    display: none;
+}
+
+.nav-mobile {
+    position: fixed;
+    right: -18rem;
+    width: 25rem;
+    height: 60vh;
+    background-color: rgba(141, 109, 90, 0.836);
+    transition: all 0.5s;
+}
+
+@media (max-width: 320px) {
+    .nav-mobile {
+        height: 68vh;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-mobile {
+        height: 64vh;
+    }
+}
+
+.nav-mobile p {
+    font-size: 2.2rem;
+    color: white;
+    text-align: center;
+    line-height: 7rem;
+    background-color: rgba(175, 136, 113, 0.836);
+    user-select: none;
+}
+
+.nav-mobile ul {
+    padding-left: 0;
+}
+
+.nav-mobile ul li {
+    background-color: rgba(175, 136, 113, 0.836);
+}
+
+.nav-mobile ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 6.5rem;
+    font-size: 2rem;
+    color: white;
+    padding-left: 7rem;
+    box-sizing: border-box;
+    border-bottom: 1px solid white;
+    margin-left: 0;
+}
+
+@media (max-width: 320px) {
+    .nav-mobile ul li {
+        height: 5rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .nav-mobile ul li {
+        height: 6rem;
+    }
+}
+
+label #bt,
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+}
+
+label #bt {
+    right: 7rem;
+    top: 2.7rem;
+    font-size: 4rem;
+    color: white;
+    transition: all 0.5s;
+}
+
+label #cancel {
+    z-index: 1111;
+    right: -20rem;
+    top: 13rem;
+    font-size: 3rem;
+    color: white;
+    padding: 0.4rem 0.9rem;
+    transition: all 0.5s ease;
+}
+
+@media (max-width: 320px) {
+    label #cancel {
+        top: 16rem;
+    }
+}
+
+@media (max-width: 411px) {
+    label #cancel {
+        top: 13rem;
+    }
+}
+
+#btn-menu:checked~.nav-mobile {
+    right: 18rem;
+}
+
+@media (max-width: 320px) {
+    #btn-menu:checked~.nav-mobile {
+        right: 12rem;
+    }
+}
+
+@media (max-width: 411px) {
+    #btn-menu:checked~.nav-mobile {
+        right: 16.2rem;
+    }
+}
+
+#btn-menu:checked~label #bt {
+    right: 25rem;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#btn-menu:checked~label #cancel {
+    right: 18.5rem;
+}
+
+@media (max-width: 320px) {
+    #btn-menu:checked~label #cancel {
+        right: 15.5rem;
+    }
+}
+
+@media (max-width: 411px) {
+    #btn-menu:checked~label #cancel {
+        right: 19.5rem;
+    }
+}
